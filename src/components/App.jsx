@@ -18,3 +18,8 @@ export const App = () => {
     </BrowserRouter>
   );
 };
+
+
+// API_KEY = '370cedd7ac7db43491cdc5a63d979178';
+
+// API Read Access Token = eyJhbGciOiJIUzI1NiJ9.'eyJhdWQiOiIzNzBjZWRkN2FjN2RiNDM0OTFjZGM1YTYzZDk3OTE3OCIsInN1YiI6IjY0ZWRmMTU5NTk0Yzk0MDEzOWNhNWMzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ'.K2jCVn_RVGCejH5kZgcmybGQri87X46QtXPYHOTCLXo
