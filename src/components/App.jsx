@@ -1,5 +1,8 @@
+import { BrowserRouter } from "react-router-dom";
+
 export const App = () => {
   return (
+    <BrowserRouter basename="/goit-react-hw-05-movies">
     <div
       style={{
         height: '100vh',
@@ -12,5 +15,6 @@ export const App = () => {
     >
       React homework template
     </div>
+    </BrowserRouter>
   );
 };
