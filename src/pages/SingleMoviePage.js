@@ -1,10 +1,11 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { getMovieById } from 'api';
 import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { Loader } from 'components/Loader';
 import { Wrapper } from 'components/Wrapper';
+import { BackButton } from 'components/BackButton';
 
 const api_key = '370cedd7ac7db43491cdc5a63d979178';
 
@@ -35,11 +36,11 @@ const SingleMoviePage = () => {
   return (
     <main>
       <Wrapper>{isLoading && <Loader />}</Wrapper>
-      <Link to="/">
+      <BackButton to="/">
         <FaArrowLeftLong />
-        Back to trending movies
-      </Link>
-      <div>SingleMoviePage of: {movieId}</div>
+        Back
+      </BackButton>
+      {/* <div>SingleMoviePage of: {movieId}</div> */}
       {movieData && (
         <>
           <h2>{movieData.title}</h2>

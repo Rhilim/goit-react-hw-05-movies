@@ -1,4 +1,5 @@
 import HomePage from 'pages/HomePage';
+import { Search } from 'pages/Search';
 import SingleMoviePage from 'pages/SingleMoviePage';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { Cast } from './Cast';
@@ -21,7 +22,7 @@ export const App = () => {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<div>Search</div>} />
+        <Route path="/movies" element={<Search/>} />
         <Route path="/movies/:movieId" element={<SingleMoviePage />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />

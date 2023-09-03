@@ -61,23 +61,13 @@ export const getTrending = async () => {
     }
   }
 
-  // export const getMovieReviews = async () => {
-  //   try {
-  //     const response = await axios.get('/movie/movie_id/reviews?language=en-US&page=1');
-  //     console.log(response);
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
 
-
-  // export const searchMovies = async () => {
-  //   try {
-  //     const response = await axios.get('/search/movie?include_adult=false&language=en-US&page=1');
-  //     console.log(response);
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  export const searchMovies = async (query) => {
+    try {
+      const response = await axios.get(`/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options);
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
