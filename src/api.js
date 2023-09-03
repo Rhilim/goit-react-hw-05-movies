@@ -51,6 +51,15 @@ export const getTrending = async () => {
     }
   }
 
+  export const getMovieReviews = async (movieId) => {
+    try {
+      const response = await axios.get(`/movie/${movieId}/reviews`, options);
+      // console.log(response);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   // export const getMovieReviews = async () => {
   //   try {

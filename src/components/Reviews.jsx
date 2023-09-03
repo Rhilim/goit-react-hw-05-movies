@@ -1,53 +1,51 @@
-import { getMovieCredits } from 'api';
+import { getMovieReviews } from 'api';
 import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import { Loader } from './Loader';
 import { Wrapper } from './Wrapper';
 
-export const Cast = () => {
+export const Reviews = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [cast, setCast] = useState(null);
+  const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
 
-  //   console.log(cast);
   useEffect(() => {
     if (!movieId) return;
-    async function fetchCredits() {
+    async function fetchReview() {
       try {
         setIsLoading(true);
-        const movieCast = await getMovieCredits(movieId);
-        // console.log(movieCast.cast);
+        const movieReviews = await getMovieReviews(movieId);
+        console.log(movieReviews.results);
 
-        toast.success('Here is the movie cast');
-        setCast(movieCast.cast);
+        toast.success('Here are the movie reviews');
+        setReviews(movieReviews.results);
       } catch (error) {
         toast.error('Error fetching cast data:', error);
       } finally {
         setIsLoading(false);
       }
     }
-    fetchCredits();
+    fetchReview();
   }, [movieId]);
 
   return (
     <>
       <Wrapper>{isLoading && <Loader />}</Wrapper>
       <Toaster />
-      {cast &&
-        cast.map(({ id, profile_path, name, character }) => {
+
+      {reviews ? (
+        reviews.map(({ id, author, content }) => {
           return (
             <li key={id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                alt={name}
-                width={200}
-              />
-              <h3>{name}</h3>
-              <p>Character: {character}</p>
+              <h3>Author: {author}</h3>
+              <p>Character: {content}</p>
             </li>
           );
-        })}
+        })
+      ) : (
+        <p>There is no reviews on this movie</p>
+      )}
     </>
   );
 };
