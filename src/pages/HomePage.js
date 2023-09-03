@@ -36,9 +36,7 @@ const HomePage = () => {
 
   return (
     <>
-    <Wrapper>
-      {isLoading && <Loader />}
-      </Wrapper>
+      <Wrapper>{isLoading && <Loader />}</Wrapper>
       <h1>Trending Today</h1>
       <ul>
         {films.map(film => (

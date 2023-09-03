@@ -1,5 +1,4 @@
 import HomePage from 'pages/HomePage';
-// import Movies from "pages/HomePage";
 import SingleMoviePage from 'pages/SingleMoviePage';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { Cast } from './Cast';

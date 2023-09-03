@@ -20,7 +20,7 @@ const options = {
 export const getTrending = async () => {
     try {
     const response = await axios.get('/trending/all/day', options);
-    console.log(response.data.results)
+    // console.log(response.data.results)
     return response.data.results;
     
   } catch (error) {
