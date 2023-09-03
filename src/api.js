@@ -30,43 +30,42 @@ export const getTrending = async () => {
 };
 
 
-
-
   export const getMovieById = async movieId => {
     try {
       const response = await axios.get(`/movie/${movieId}`, options);
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     } catch (error) {
       console.error(error);
     }
   }
   
-
- // export const searchMovies = async () => {
-  //   try {
-  //     const response = await axios.get('/search/movie?include_adult=false&language=en-US&page=1');
-  //     console.log(response);
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
-  // export const getMovieCredits = async () => {
-  //   try {
-  //     const response = await axios.get('movie/movie_id/credits?language=en-US');
-  //     console.log(response);
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+ 
+  export const getMovieCredits = async (movieId) => {
+    try {
+      const response = await axios.get(`/movie/${movieId}/credits`, options);
+      // console.log(response);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 
   // export const getMovieReviews = async () => {
   //   try {
   //     const response = await axios.get('/movie/movie_id/reviews?language=en-US&page=1');
+  //     console.log(response);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+
+
+  // export const searchMovies = async () => {
+  //   try {
+  //     const response = await axios.get('/search/movie?include_adult=false&language=en-US&page=1');
   //     console.log(response);
   //     return response.data;
   //   } catch (error) {
