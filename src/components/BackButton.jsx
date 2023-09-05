@@ -7,10 +7,11 @@ display: inline-flex;
 align-items: flex-end;
 gap: 3px;
 border: none;
-padding: 12px 6px;
-background-color: grey;
+border-radius: 5px;
+padding: 8px 6px;
+background-color: skyblue;
 color: black;
-  &.active {
+  :hover {
     color: orange;
   }
 `

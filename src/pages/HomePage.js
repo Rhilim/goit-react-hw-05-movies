@@ -1,9 +1,25 @@
+import styled from '@emotion/styled';
 import { getTrending } from 'api';
 import { Loader } from 'components/Loader';
 import { Wrapper } from 'components/Wrapper';
 import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+export const StyledListTrend = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+  color: #212121;
+`;
+
+const StyledLinkHome = styled(NavLink)`
+text-decoration: none;
+:hover{
+  color: orangered;
+}
+`
 
 const HomePage = () => {
   const [films, setFilms] = useState([]);
@@ -35,13 +51,13 @@ const HomePage = () => {
     <>
       <Wrapper>{isLoading && <Loader />}</Wrapper>
       <h1>Trending Today</h1>
-      <ul>
+      <StyledListTrend>
         {films.map(film => (
-          <Link to={`/movies/${film.id}`}>
+          <StyledLinkHome to={`/movies/${film.id}`}>
             <li key={film.id}>{film.title || film.name}</li>
-          </Link>
+          </StyledLinkHome>
         ))}
-      </ul>
+      </StyledListTrend>
       <Toaster />
     </>
   );

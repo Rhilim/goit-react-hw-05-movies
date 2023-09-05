@@ -7,6 +7,7 @@ import { Loader } from 'components/Loader';
 import { Wrapper } from 'components/Wrapper';
 import { BackButton } from 'components/BackButton';
 import { BasicContainer, InfoContainer } from 'components/OneMovie.styled';
+import { StyledListTrend } from './HomePage';
 
 const api_key = '370cedd7ac7db43491cdc5a63d979178';
 
@@ -35,7 +36,7 @@ const SingleMoviePage = () => {
   }, [movieId]);
 
   return (
-    <main>
+    <>
       <Wrapper>{isLoading && <Loader />}</Wrapper>
       <BackButton to="/">
         <FaArrowLeftLong />
@@ -65,20 +66,19 @@ const SingleMoviePage = () => {
       )}
       <hr />
       <p>Additional information</p>
-
-      <ul>
+      <StyledListTrend>
         <li>
           <Link to="cast">Cast</Link>
         </li>
         <li>
           <Link to="reviews">Reviews</Link>
         </li>
-      </ul>
+      </StyledListTrend>
       <hr />
       {/* <Suspense fallback={<Loader />}> */}
         <Outlet />
       {/* </Suspense> */}
-    </main>
+    </>
   );
 };
 
