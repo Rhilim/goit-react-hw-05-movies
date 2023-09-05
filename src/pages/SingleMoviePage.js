@@ -41,7 +41,6 @@ const SingleMoviePage = () => {
         <FaArrowLeftLong />
         Back
       </BackButton>
-      {/* <div>SingleMoviePage of: {movieId}</div> */}
       {movieData && (
         <>
           <h2>{movieData.title}</h2>
