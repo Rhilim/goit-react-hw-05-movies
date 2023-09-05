@@ -1,7 +1,7 @@
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { getMovieById } from 'api';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { Loader } from 'components/Loader';
 import { Wrapper } from 'components/Wrapper';
