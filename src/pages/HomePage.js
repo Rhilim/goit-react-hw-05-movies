@@ -14,15 +14,12 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         const results = await getTrending();
-        // console.log(results);
-        // toast.success('These are trending movies for today');
         const filmsData = results.map(({ id, backdrop_path, title, name }) => ({
           id,
           backdrop_path,
           title,
           name,
         }));
-        // console.log(filmsData);
         setFilms(filmsData);
       } catch (error) {
         toast.error('Error fetching movies:', error);

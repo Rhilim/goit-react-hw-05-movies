@@ -1,9 +1,12 @@
-import HomePage from 'pages/HomePage';
-import { Search } from 'pages/Search';
-import SingleMoviePage from 'pages/SingleMoviePage';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { Cast } from './Cast';
-import { Reviews } from './Reviews';
+import { lazy } from "react";
+
+const HomePage = lazy(() => import("../pages/HomePage"));
+const Search = lazy(() => import("../pages/Search"));
+const SingleMoviePage = lazy(() => import("../pages/SingleMoviePage"));
+const Cast = lazy(() => import("./Cast"));
+const Reviews = lazy(() => import( "./Reviews"));
+
 
 export const App = () => {
   return (
@@ -27,6 +30,7 @@ export const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );

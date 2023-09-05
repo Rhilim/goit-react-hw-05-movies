@@ -6,11 +6,10 @@ import toast, { Toaster } from 'react-hot-toast';
 import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
-export const Search = () => {
+const Search = () => {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
-
 
   const handleSearch = async () => {
     if (query.trim() === '') {
@@ -77,3 +76,5 @@ export const Search = () => {
     </div>
   );
 };
+
+export default Search;

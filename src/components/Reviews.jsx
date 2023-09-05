@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Loader } from './Loader';
 import { Wrapper } from './Wrapper';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
@@ -51,3 +51,6 @@ export const Reviews = () => {
     </>
   );
 };
+
+
+export default Reviews;

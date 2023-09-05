@@ -5,19 +5,17 @@ import { useParams } from 'react-router-dom';
 import { Loader } from './Loader';
 import { Wrapper } from './Wrapper';
 
-export const Cast = () => {
+const Cast = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [cast, setCast] = useState(null);
   const { movieId } = useParams();
 
-  //   console.log(cast);
   useEffect(() => {
     if (!movieId) return;
     async function fetchCredits() {
       try {
         setIsLoading(true);
         const movieCast = await getMovieCredits(movieId);
-        // console.log(movieCast.cast);
 
         toast.success('Here is the movie cast');
         setCast(movieCast.cast);
@@ -51,3 +49,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;
