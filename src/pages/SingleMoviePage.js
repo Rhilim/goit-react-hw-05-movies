@@ -76,9 +76,9 @@ const SingleMoviePage = () => {
         </li>
       </ul>
       <hr />
-      <Suspense fallback={<Loader />}>
+      {/* <Suspense fallback={<Loader />}> */}
         <Outlet />
-      </Suspense>
+      {/* </Suspense> */}
     </main>
   );
 };
