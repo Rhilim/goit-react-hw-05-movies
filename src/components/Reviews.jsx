@@ -16,7 +16,6 @@ const Reviews = () => {
       try {
         setIsLoading(true);
         const movieReviews = await getMovieReviews(movieId);
-        // console.log(movieReviews.results);
 
         toast.success('Here are the movie reviews');
         setReviews(movieReviews.results);
@@ -38,10 +37,10 @@ const Reviews = () => {
         reviews.map(({ id, author, content }) => {
           return (
             <ul>
-            <li key={id}>
-              <h3>Author: {author}</h3>
-              <p>Character: {content}</p>
-            </li>
+              <li key={id}>
+                <h3>Author: {author}</h3>
+                <p>Character: {content}</p>
+              </li>
             </ul>
           );
         })
@@ -51,6 +50,5 @@ const Reviews = () => {
     </>
   );
 };
-
 
 export default Reviews;
