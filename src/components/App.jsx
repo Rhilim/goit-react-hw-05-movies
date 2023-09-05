@@ -1,12 +1,11 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { lazy } from "react";
+import Search from 'pages/Search';
 
 const HomePage = lazy(() => import("../pages/HomePage"));
-const Search = lazy(() => import("../pages/Search"));
 const SingleMoviePage = lazy(() => import("../pages/SingleMoviePage"));
 const Cast = lazy(() => import("./Cast"));
 const Reviews = lazy(() => import( "./Reviews"));
-
 
 export const App = () => {
   return (
