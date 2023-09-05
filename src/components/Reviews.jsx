@@ -33,7 +33,7 @@ const Reviews = () => {
       <Wrapper>{isLoading && <Loader />}</Wrapper>
       <Toaster />
 
-      {reviews ? (
+      {(reviews) ? (
         reviews.map(({ id, author, content }) => {
           return (
             <ul>
@@ -47,6 +47,7 @@ const Reviews = () => {
       ) : (
         <p>There is no reviews on this movie</p>
       )}
+      
     </>
   );
 };

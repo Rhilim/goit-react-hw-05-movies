@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 
+
+
+
 export const StyledListTrend = styled.ul`
   display: flex;
   flex-direction: column;
@@ -20,7 +23,6 @@ text-decoration: none;
   color: orangered;
 }
 `
-
 const HomePage = () => {
   const [films, setFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
